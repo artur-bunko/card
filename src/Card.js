@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import styles from "./styles.scss";
 import {dispatch} from "./utils/dispatch";
 import {getParentNode} from "./utils/getParent"
-import {useEffect} from "react/cjs/react.production.min";
+import {useEffect} from "react";
 
 
 function Card (props) {

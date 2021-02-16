@@ -1,12 +1,13 @@
 import classnames from "classnames";
 import propTypes from "prop-types";
-import "./styles.scss";
+import styles from "./styles.scss";
 
 function Card (props, children) {
 	const { vertical, loading, customStyles, size } = props;
 
 	return (
 		<>
+			<style type="text/css">{styles}</style>
 			<div className={
 				classnames({
 					"swf-card": true,
@@ -14,7 +15,7 @@ function Card (props, children) {
 					[`--${size}`]: true
 				})
 			} style={customStyles}>
-			ВЫФВЫФВ
+				{children}
 			</div>
 		</>
 	)

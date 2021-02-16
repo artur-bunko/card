@@ -2,6 +2,9 @@ import classnames from "classnames";
 import propTypes from "prop-types";
 import styles from "./styles.scss";
 import {dispatch} from "./utils/dispatch";
+import {useRef} from "react";
+import {getParentNode} from "./utils/getParent"
+
 
 function Card (props) {
 	const { vertical, loading, customStyles, size } = props;
@@ -28,5 +31,7 @@ Card.propTypes = {
 	customStyles: propTypes.object,
 	size: propTypes.oneOf(["s", "m", "l"])
 }
+
+Card = getParentNode()(Card);
 
 export default Card

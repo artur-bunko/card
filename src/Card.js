@@ -2,7 +2,7 @@ import classnames from "classnames";
 import propTypes from "prop-types";
 import styles from "./styles.scss";
 
-function Card (props, children) {
+function Card (props) {
 	const { vertical, loading, customStyles, size } = props;
 
 	return (
@@ -15,7 +15,7 @@ function Card (props, children) {
 					[`--${size}`]: true
 				})
 			} style={customStyles}>
-				{children}
+				{props.children}
 			</div>
 		</>
 	)

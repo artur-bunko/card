@@ -1,33 +1,26 @@
 import classnames from "classnames";
-import * as React from "react";
+import React from "react";
 import CardPreloader from "./Preloader";
-import styles from "./styles.scss";
 import propTypes from "prop-types";
+import "./styles.scss";
 
-class Card extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+function Card (props, children) {
+	const { vertical, loading, customStyles, size } = props;
+	if (loading) return <CardPreloader/>
 
-	render() {
-		const { vertical, loading, customStyles, size } = this.props;
-		if (loading) return <CardPreloader/>
-
-		return (
-			<React.Fragment>
-				<style type="text/css">{styles}</style>
-				<div className={
-					classnames({
-						"swf-card": true,
-						"vertical": vertical,
-						[`--${size}`]: true
-					})
-				} style={customStyles}>
-					<React.Fragment>{this.props.children}</React.Fragment>
-				</div>
-			</React.Fragment>
-		)
-	}
+	return (
+		<>
+			<div className={
+				classnames({
+					"swf-card": true,
+					"vertical": vertical,
+					[`--${size}`]: true
+				})
+			} style={customStyles}>
+				<>{children}</>
+			</div>
+		</>
+	)
 }
 
 Card.propTypes = {

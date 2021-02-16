@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import propTypes from "prop-types";
 import styles from "./styles.scss";
+import {dispatch} from "./utils/dispatch";
 
 function Card (props) {
 	const { vertical, loading, customStyles, size } = props;
@@ -15,7 +16,7 @@ function Card (props) {
 					[`--${size}`]: true
 				})
 			} style={customStyles}>
-				{props.children}
+				<button onClick={dispatch("TEST_DISPATCH", {Log: "adadsdasd"})}>Dispatch</button>
 			</div>
 		</>
 	)

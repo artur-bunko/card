@@ -2,12 +2,17 @@ import classnames from "classnames";
 import propTypes from "prop-types";
 import styles from "./styles.scss";
 import {dispatch} from "./utils/dispatch";
-import {useRef} from "react";
 import {getParentNode} from "./utils/getParent"
+import {useEffect} from "react/cjs/react.production.min";
 
 
 function Card (props) {
 	const { vertical, loading, customStyles, size } = props;
+
+	useEffect(() => {
+		const node = getParentNode(this);
+		console.log(node)
+	})
 
 	return (
 		<>
@@ -31,7 +36,5 @@ Card.propTypes = {
 	customStyles: propTypes.object,
 	size: propTypes.oneOf(["s", "m", "l"])
 }
-
-Card = getParentNode()(Card);
 
 export default Card

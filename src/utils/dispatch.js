@@ -1,4 +1,5 @@
 export function dispatch (type, detail) {
+    console.log("Dispatch", {type, detail})
     const event = new CustomEvent(type, {
         composed: true,
         bubbles: true,

@@ -1,12 +1,9 @@
 import classnames from "classnames";
-import React from "react";
-import CardPreloader from "./Preloader";
 import propTypes from "prop-types";
 import "./styles.scss";
 
 function Card (props, children) {
 	const { vertical, loading, customStyles, size } = props;
-	if (loading) return <CardPreloader/>
 
 	return (
 		<>
@@ -17,7 +14,7 @@ function Card (props, children) {
 					[`--${size}`]: true
 				})
 			} style={customStyles}>
-				<>{children}</>
+			ВЫФВЫФВ
 			</div>
 		</>
 	)

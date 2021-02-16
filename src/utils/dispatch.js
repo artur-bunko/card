@@ -6,5 +6,5 @@ export function dispatch (type, detail) {
         detail: Object.assign({type}, {payload: detail})
     });
 
-    document.dispatchEvent(event);
+    document.querySelector("x-277411-test-react").dispatchEvent(event);
 }

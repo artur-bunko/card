@@ -16,7 +16,7 @@ function Card (props) {
 					[`--${size}`]: true
 				})
 			} style={customStyles}>
-				<button onClick={dispatch("TEST_DISPATCH", {Log: "adadsdasd"})}>Dispatch</button>
+				<button onClick={() => dispatch("TEST_DISPATCH", {Log: "adadsdasd"})}>Dispatch</button>
 			</div>
 		</>
 	)

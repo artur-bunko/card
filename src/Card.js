@@ -1,11 +1,11 @@
 import classnames from "classnames";
 import propTypes from "prop-types";
 import styles from "./styles.scss";
-import {attachDispatch} from "./utils/getParent"
+import {dispatch} from "./utils/dispatchDecorator"
 import {Component} from "react";
 import CardPreloader from "./Preloader";
 
-@attachDispatch()
+@dispatch()
 class Card extends Component {
 	constructor(props) {
 		super(props);

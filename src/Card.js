@@ -14,8 +14,6 @@ class Card extends Component {
 	render() {
 		const { vertical, loading, customStyles, size } = this.props;
 
-		console.log(this.props);
-
 		if (loading) return <CardPreloader/>
 
 		return (
